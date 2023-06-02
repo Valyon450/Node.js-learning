@@ -1,25 +1,25 @@
 // функція-обгортка, яка кешує результат будь-якої іншої функції
 function WrapCache(func) {
 
-    const cache = {};
+    const map = new Map();
   
     return function(...args) {
 
         const key = JSON.stringify(args);
   
-        if (cache[key]) {
+        if (map.get(key)) {
             console.log('Fetching from cache');
-            return cache[key];
+            return map.get(key);
         }
   
         const result = func.apply(this, args);
-        cache[key] = result;
+        map.set(key, result);
         console.log('Calculating result');
         return result;
     };
 }
   
-// Функція приймає будь-яку кількість числових параматрів та повертає їх суму
+// Функція приймає будь-яку кількість числових параметрів та повертає їх суму
 function Add() {
     var Sum = 0;
   

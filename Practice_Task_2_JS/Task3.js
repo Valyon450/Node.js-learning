@@ -7,7 +7,7 @@ const Person = {
 
 function DeepClone(Object) {
     
-    return structuredClone(Object);
+    return JSON.parse(JSON.stringify(Object));
 }
 
 var PersonClone = DeepClone(Person);
