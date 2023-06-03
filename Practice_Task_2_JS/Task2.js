@@ -1,13 +1,9 @@
-function СheckAnagram(String1 , String2) {
+function СheckAnagram(string1 , string2) {
     
-    if (String1.length != String2.length)
+    if (string1.length != string2.length)
         return false;
-    
-        
-    if (String1.split("").sort().join("") == String2.split("").sort().join(""))
-        return true;
-    else
-        return false;
+            
+    return string1.split("").sort().join("") == string2.split("").sort().join("")
 }
 
 console.log(СheckAnagram('Тартак', 'ТНМК')); // false
