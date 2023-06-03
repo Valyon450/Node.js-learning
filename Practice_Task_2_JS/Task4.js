@@ -21,7 +21,7 @@ function WrapCache(func) {
   
 // Функція приймає будь-яку кількість числових параметрів та повертає їх суму
 function Add() {
-    var Sum = 0;
+    let Sum = 0;
   
     for(var i = 0; i < arguments.length; i++) {
         Sum += arguments[i];
